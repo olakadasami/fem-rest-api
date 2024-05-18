@@ -25,8 +25,8 @@ export default async function Home({ searchParams }: { searchParams: any }) {
   const countries = await getData(searchParams.country, searchParams.filter);
 
   return (
-    <main className="min-h-screen flex gap-10 flex-col px-20 py-10">
-      <section className="flex items-center justify-between gap-10">
+    <main className="min-h-screen flex gap-10 flex-col px-4 sm:px-6 md:px-10 lg:px-20 py-10">
+      <section className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         {/* Search */}
         <Search />
 

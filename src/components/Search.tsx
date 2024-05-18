@@ -9,7 +9,7 @@ export default function Search() {
     <form
       name="search"
       action={searchCountriesAction}
-      className="flex bg-primary items-center w-2/5 px-10 gap-6 rounded shadow-lg"
+      className="flex bg-primary items-center w-full md:w-2/5 px-10 gap-6 rounded shadow-lg"
     >
       <FaSearch className="text-color-gray text-xl" />
       <input

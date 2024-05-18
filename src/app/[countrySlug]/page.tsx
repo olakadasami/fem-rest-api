@@ -15,12 +15,13 @@ const CountryDetailsPage = async ({
   params: { countrySlug: string };
 }) => {
   const country = await getCountry(params.countrySlug);
+  console.log(country[0].borders);
 
   return (
-    <main className="px-20 py-10">
+    <main className="px-6 md:px-10 lg:px-20 py-10 min-h-screen">
       <BackButton />
-      <div className="flex gap-10 mt-10">
-        <section id="flag" className="w-2/5">
+      <div className="flex flex-col md:flex-row gap-10 mt-10">
+        <section id="flag" className="w-full md:w-2/5">
           <Image
             width={500}
             height={400}
@@ -28,12 +29,12 @@ const CountryDetailsPage = async ({
             alt={country[0].flags.alt}
           />
         </section>
-        <section id="details" className="w-3/5">
+        <section id="details" className="w-full md:w-3/5">
           <h1 className="text-2xl font-bold mb-6">
             {country[0].name.official}
           </h1>
-          <div className="text-sm flex gap-10">
-            <ul className="flex flex-col gap-3 w-1/2">
+          <div className="text-sm flex flex-col md:flex-row gap-10">
+            <ul className="flex flex-col gap-3 w-full md:w-1/2">
               <li>
                 <span className="font-semibold">Native Name: </span>
                 {Object.values(country[0].name.nativeName)[0].official}
@@ -55,7 +56,7 @@ const CountryDetailsPage = async ({
                 {country[0].capital[0]}
               </li>
             </ul>
-            <ul className="flex flex-col gap-3 w-1/2">
+            <ul className="flex flex-col gap-3 w-full md:w-1/2">
               <li>
                 <span className="font-semibold">Top Level Domain: </span>
                 {country[0].tld}

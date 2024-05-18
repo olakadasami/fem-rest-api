@@ -17,7 +17,7 @@ export default function Filter() {
       <select
         name="filter"
         defaultValue={"filter"}
-        className="select select-bordered shadow bg-primary w-full max-w-sm active:outline-none focus:outline-none border-none"
+        className="select select-bordered shadow bg-primary w-full md:max-w-sm active:outline-none focus:outline-none border-none"
       >
         <option disabled value={"filter"}>
           Filter by Region
