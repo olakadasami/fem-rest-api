@@ -1,9 +1,18 @@
 import BackButton from "@/components/BackButton";
 import Image from "next/image";
+import Link from "next/link";
 
 async function getCountry(name: string) {
   const res = await fetch(
     `https://restcountries.com/v3.1/name/${name}?fullText=true`
+  );
+
+  return res.json();
+}
+
+async function getCountryByCode(code: string[]) {
+  const res = await fetch(
+    `https://restcountries.com/v3.1/alpha?codes=${code.join()}&fields=name`
   );
 
   return res.json();
@@ -15,7 +24,7 @@ const CountryDetailsPage = async ({
   params: { countrySlug: string };
 }) => {
   const country = await getCountry(params.countrySlug);
-  console.log(country[0].borders);
+  const borderedCountries = await getCountryByCode(country[0].borders);
 
   return (
     <main className="px-6 md:px-10 lg:px-20 py-10 min-h-screen">
@@ -70,6 +79,20 @@ const CountryDetailsPage = async ({
                 {Object.values(country[0].languages)[0]}
               </li>
             </ul>
+          </div>
+
+          {/* Bordered countries */}
+          <div className="mt-10 flex items-center gap-4">
+            <h2>Bordered Countries:</h2>
+            {borderedCountries.map((country: any) => (
+              <Link
+                href={`/${country.name.common}`}
+                key={country.name.official}
+                className="btn btn-primary py-1 shadow"
+              >
+                {country.name.common}
+              </Link>
+            ))}
           </div>
         </section>
       </div>

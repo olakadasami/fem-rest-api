@@ -33,7 +33,7 @@ const config: Config = {
           ...require("daisyui/src/theming/themes")["light"],
           primary: "hsl(0, 0%, 100%)",
           secondary: "hsl(200, 15%, 8%)",
-          accent: "#37cdbe",
+          accent: "hsl(0, 0%, 52%)",
           neutral: "#3d4451",
           "base-100": "hsl(0, 0%, 98%)",
         },
