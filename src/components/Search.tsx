@@ -9,7 +9,7 @@ export default function Search() {
     <form
       name="search"
       action={searchCountriesAction}
-      className="flex items-center bg-color-white w-2/5 px-10 gap-6 rounded shadow-lg"
+      className="flex bg-primary items-center w-2/5 px-10 gap-6 rounded shadow-lg"
     >
       <FaSearch className="text-color-gray text-xl" />
       <input
@@ -17,7 +17,7 @@ export default function Search() {
         id="search"
         name="search"
         disabled={pending}
-        className="w-full h-full py-6 active:outline-none outline-none"
+        className="w-full h-full bg-primary py-6 input active:outline-none focus:outline-none focus:border-none"
         placeholder="Search for a country..."
       />
     </form>

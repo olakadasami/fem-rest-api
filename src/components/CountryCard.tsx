@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const CountryCard = ({ country }: { country: Country }) => {
   return (
-    <div className="w-60 shadow-lg rounded-md">
+    <div className="w-60 shadow-lg rounded-md bg-primary">
       {/* Flag */}
       <div className="w-60 h-40 overflow-hidden object-cover">
         <Image

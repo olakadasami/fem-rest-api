@@ -23,9 +23,30 @@ const config: Config = {
       },
     },
   },
-  daisyui: {
-    themes: [],
-  },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: [
+      "light",
+      "dark",
+      {
+        light: {
+          ...require("daisyui/src/theming/themes")["light"],
+          primary: "hsl(0, 0%, 100%)",
+          secondary: "hsl(200, 15%, 8%)",
+          accent: "#37cdbe",
+          neutral: "#3d4451",
+          "base-100": "hsl(0, 0%, 98%)",
+        },
+        dark: {
+          ...require("daisyui/src/theming/themes")["dark"],
+          primary: "hsl(209, 23%, 22%)",
+          secondary: "hsl(0, 0%, 100%)",
+          accent: "#37cdbe",
+          neutral: "#3d4451",
+          "base-100": "hsl(207, 26%, 17%)",
+        },
+      },
+    ],
+  },
 };
 export default config;
