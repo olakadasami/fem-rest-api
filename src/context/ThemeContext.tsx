@@ -5,7 +5,10 @@ type TContext = {
   theme: string;
   changeTheme: (t: string) => void;
 };
-export const ThemeContext = createContext<TContext>();
+export const ThemeContext = createContext<TContext>({
+  theme: "light",
+  changeTheme: () => {},
+});
 
 export const ThemeProvider = ({ children }: PropsWithChildren) => {
   const [theme, setTheme] = useState("light");
